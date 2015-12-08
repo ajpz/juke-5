@@ -12,8 +12,25 @@ app.directive('songList', function(PlayerFactory) {
 			};
 
 			scope.start = function (song) {
+				// console.log("starting");
 				PlayerFactory.start(song, scope.songs);
 			};
+			// scope.test = function() {
+			// 	console.log("testing the songList scope");
+			// }
 		} 
-	}
+	};
 })
+.directive('doubleClick', function(){
+	return {
+		restrict: 'A',
+		scope: {
+			doubleClick: '&'
+		},
+		link: function(scope, element) {
+			element.on('dblclick', function(){
+				scope.doubleClick();
+			});
+		}
+	}
+});
