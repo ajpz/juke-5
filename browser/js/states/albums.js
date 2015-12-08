@@ -1,7 +1,8 @@
 app.config(function ($stateProvider) {
 	$stateProvider.state('albums', {
 		url: '/albums',
-		templateUrl: '/templates/albums.html',
+		template: '<album-list albums="albums"></album-list>',
+		// templateUrl: '/templates/albums.html',
 		controller: 'AlbumsCtrl',
 		resolve: {
 			allAlbums: function (AlbumFactory) {

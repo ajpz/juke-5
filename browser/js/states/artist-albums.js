@@ -1,6 +1,7 @@
 app.config(function ($stateProvider) {
 	$stateProvider.state('artist.albums', {
 		url: '/albums',
-		templateUrl: '/templates/artist-albums.html'
+		template: '<album-list albums="artist.albums"></album-list>'
+		// templateUrl: '/templates/artist-albums.html'
 	});
 });
